@@ -38,6 +38,18 @@ qdrant.get_collection(
 
 # Define the ingestion function
 def ingest_vectors(row):
+  """
+  Processes a row containing page content and metadata, uploads it to Qdrant as a
+  point vector, and updates a global count of ingested vectors. It handles empty
+  page content by replacing it with a default value.
+
+  Args:
+      row (Dict[str, Any]): Expected to contain two keys: 'page_content' and
+          'metadata'. The 'page_content' key represents the content of a webpage.
+          The 'metadata' key contains metadata information about the webpage,
+          including a unique identifier ('uuid') and possibly other details.
+
+  """
   global count
   #print(f"processing message: {row}")
   
