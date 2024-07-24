@@ -1,0 +1,42 @@
+[
+  {
+    "name": "main.py",
+    "path": "Sink vectors to Qdrant Cloud/main.py",
+    "content": {
+      "structured": {
+        "description": "An application that ingests messages from a topic in a Quix stream processing platform and stores the extracted embeddings in a Qdrant database. The code utilizes the SentenceTransformer library to generate sentence embeddings using the all-MiniLM-L6-v2 model. It creates or retrieves a collection in Qdrant, where it uploads points containing the embeddings and metadata from incoming messages.",
+        "items": [
+          {
+            "id": "72aa824c-39e0-e58e-a447-0c5bd365634c",
+            "ancestors": [],
+            "description": "Processes a row containing page content and metadata, uploads it to Qdrant as a point vector, and updates a global count of ingested vectors. It handles empty page content by replacing it with a default value.",
+            "params": [
+              {
+                "name": "row",
+                "type_name": "Dict[str, Any]",
+                "description": "Expected to contain two keys: 'page_content' and 'metadata'. The 'page_content' key represents the content of a webpage. The 'metadata' key contains metadata information about the webpage, including a unique identifier ('uuid') and possibly other details."
+              }
+            ],
+            "returns": null,
+            "usage": {
+              "language": "python",
+              "code": "row = {'page_content': 'Test content', 'metadata': {'uuid': '12345'}}\ningest_vectors(row)",
+              "description": ""
+            },
+            "name": "ingest_vectors",
+            "location": {
+              "start": 40,
+              "insert": 41,
+              "offset": " ",
+              "indent": 2,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 21,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
